@@ -16,10 +16,12 @@ const Navbar = () => {
   return (
     <>
       <div className=" w-screen h-[10vh] bg-[rgb(0,0,0,0.15)] border-b border-b-gray-100/20 flex justify-between items-center p-5">
-        <div className=" flex items-center text-xl text-white">
-          <GiFilmProjector size={40} />
-          <p>CinemaSeeker</p>
-        </div>
+        <Link to={"/"}>
+          <div className=" flex items-center text-xl text-white">
+            <GiFilmProjector size={40} />
+            <p>CinemaSeeker</p>
+          </div>
+        </Link>
 
         <div className="hidden md:block">
           <ul className=" flex items-center capitalize text-white">

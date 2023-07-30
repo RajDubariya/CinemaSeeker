@@ -6,8 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 import fetchData from "../utils/api";
 import { getApiConfig } from "../reduxStore/movieSlice";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const [query, setQuery] = useState("");
   const dispatch = useDispatch();
   const { movieData } = useSelector((state) => state.movie);
 
@@ -55,10 +57,14 @@ const Home = () => {
                 type="text"
                 placeholder="search movie or tv shows"
                 className="text-black outline-none placeholder:capitalize w-fit md:w-[550px] py-3 px-4 bg-white text-lg capitalize rounded-l-lg"
+                onChange={(e) => setQuery(e.target.value)}
               />
-              <button className=" py-3 px-4 bg-slate-500 text-lg rounded-r-lg border-l border-l-gray-200/20">
+              <Link
+                to={`/search/${query}`}
+                className=" p-5  bg-yellow-500 text-lg rounded-r-lg border-l border-l-gray-200/20"
+              >
                 Search
-              </button>
+              </Link>
             </div>
           </div>
         </div>

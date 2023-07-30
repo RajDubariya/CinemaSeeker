@@ -24,7 +24,11 @@ const AllTvShowsCards = ({ data }) => {
                 <Link key={tv.id} to={`/tv/${tv.id}`}>
                   <div className="relative flex justify-center  flex-col border-b border-b-gray-100/30 rounded-xl shadow-lg shadow-gray-100/10">
                     <img
-                      src={`https://image.tmdb.org/t/p/w342${tv.poster_path}`}
+                      src={
+                        tv.poster_path
+                          ? `https://image.tmdb.org/t/p/w342${tv.poster_path}`
+                          : "https://eurogrid.in/wp-content/uploads/2017/06/product_image_not_available.png"
+                      }
                       alt={tv.name}
                       className=" rounded-xl hover:scale-105"
                     />
