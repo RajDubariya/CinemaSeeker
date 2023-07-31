@@ -4,7 +4,7 @@ import fetchData from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { getApiConfig } from "../reduxStore/movieSlice";
 import Loading from "./Loading";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -59,12 +59,13 @@ const MovieDetails = () => {
               <p className=" py-2">release date : {movieData.release_date}</p>
               <ul className=" py-2 flex items-center gap-2 text-sm">
                 {movieData.genres.map((genre) => (
-                  <li
+                  <Link
+                    to={`/movieGenre/${genre.id}`}
                     key={genre.id}
                     className=" bg-gray-400 py-1 px-3 rounded-full"
                   >
                     {genre.name}
-                  </li>
+                  </Link>
                 ))}
               </ul>
               <div

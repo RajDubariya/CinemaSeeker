@@ -7,6 +7,8 @@ import TopRated from "./components/TopRated";
 import MovieDetails from "./components/MovieDetails";
 import TvShowsDetails from "./components/TvShowsDetails";
 import Search from "./components/Search";
+import MoviesByGenres from "./components/MoviesByGenres";
+import TvShowsByGenres from "./components/TvShowsByGenres";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/tv/:id" element={<TvShowsDetails />} />
         <Route path="/search/:query" element={<Search />} />
+        <Route path="/movieGenre/:genreId" element={<MoviesByGenres />} />
+        <Route path="/tvGenre/:genreId" element={<TvShowsByGenres />} />
       </Routes>
     </>
   );

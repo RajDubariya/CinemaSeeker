@@ -4,7 +4,7 @@ import fetchData from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { getTvShows } from "../reduxStore/tvShowsSlice";
 import Loading from "./Loading";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const TvShowsDetails = () => {
   const dispatch = useDispatch();
@@ -61,12 +61,13 @@ const TvShowsDetails = () => {
               </p>
               <ul className=" py-2 flex items-center gap-2 text-sm">
                 {tvShowsData.genres.map((genre) => (
-                  <li
+                  <Link
+                    to={`/tvGenre/${genre.id}`}
                     key={genre.id}
                     className=" bg-gray-400 py-1 px-3 rounded-full"
                   >
                     {genre.name}
-                  </li>
+                  </Link>
                 ))}
               </ul>
               <div

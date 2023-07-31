@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 const AllTvShowsCards = ({ data }) => {
   const getVoteColor = (voteAverage) => {
@@ -12,7 +13,7 @@ const AllTvShowsCards = ({ data }) => {
   };
 
   if (!Array.isArray(data)) {
-    return <p>No data available.</p>;
+    return <Loading/>;
   }
   return (
     <>
@@ -22,7 +23,7 @@ const AllTvShowsCards = ({ data }) => {
             <div className="w-full text-white grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 p-3">
               {data?.map((tv) => (
                 <Link key={tv.id} to={`/tv/${tv.id}`}>
-                  <div className="relative flex justify-center  flex-col border-b border-b-gray-100/30 rounded-xl shadow-lg shadow-gray-100/10">
+                  <div className="relative flex justify-center  flex-col border-b-2 border-b-gray-100/30 rounded-xl shadow-lg shadow-gray-100/10">
                     <img
                       src={
                         tv.poster_path
