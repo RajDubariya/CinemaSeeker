@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import "swiper/css";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import PopularMovies from "./components/PopularMovies";
 import UpcomingMovies from "./components/UpcomingMovies";
@@ -9,6 +10,7 @@ import TvShowsDetails from "./components/TvShowsDetails";
 import Search from "./components/Search";
 import MoviesByGenres from "./components/MoviesByGenres";
 import TvShowsByGenres from "./components/TvShowsByGenres";
+import Images from "./components/Images";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/search/:query" element={<Search />} />
         <Route path="/movieGenre/:genreId" element={<MoviesByGenres />} />
         <Route path="/tvGenre/:genreId" element={<TvShowsByGenres />} />
+        <Route path="/images" element={<Images />} />
       </Routes>
     </>
   );
