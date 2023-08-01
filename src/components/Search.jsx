@@ -10,20 +10,17 @@ import { getTvShows } from "../reduxStore/tvShowsSlice";
 import AllTvShowsCards from "./AllTvShowsCards";
 
 const Search = () => {
+  const api_key = process.env.REACT_APP_API_KEY;
   const { query } = useParams();
   const dispatch = useDispatch();
   const { movieData } = useSelector((state) => state.movie);
   const { tvShowsData } = useSelector((state) => state.tvShows);
 
   useEffect(() => {
-    fetchData(
-      `search/movie?query=${query}&api_key=a4bcdf65bea0a9e12bc7ade358909a06`
-    ).then((res) => {
+    fetchData(`search/movie?query=${query}&api_key=${api_key}`).then((res) => {
       dispatch(getApiConfig(res.results));
     });
-    fetchData(
-      `search/tv?query=${query}&api_key=a4bcdf65bea0a9e12bc7ade358909a06`
-    ).then((res) => {
+    fetchData(`search/tv?query=${query}&api_key=${api_key}`).then((res) => {
       dispatch(getTvShows(res.results));
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

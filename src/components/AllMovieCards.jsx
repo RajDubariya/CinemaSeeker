@@ -24,7 +24,7 @@ const AllMovieCards = ({ data }) => {
           <div className=" flex justify-center items-center cursor-pointer">
             <div className="w-full text-white grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 p-3">
               {data?.map((movie) => (
-                <ScrollAnimation animateIn="fadeIn">
+                <ScrollAnimation animateIn="fadeIn" key={movie.id}>
                   <Link key={movie.id} to={`/movie/${movie.id}`}>
                     <div className="relative flex justify-center  flex-col border-b-2 border-b-gray-100/30 rounded-xl shadow-lg shadow-gray-100/10">
                       <img
