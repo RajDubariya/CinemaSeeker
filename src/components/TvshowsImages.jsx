@@ -16,9 +16,9 @@ const TvshowsImages = () => {
       dispatch(getTvShowsImages(res.backdrops));
     });
   }, [dispatch, id]);
-  console.log(tvShowsImages);
   return (
     <>
+      <p className="text-white capitalize text-2xl ml-4 my-4">Photos</p>
       <Swiper
         modules={[Navigation]}
         navigation
