@@ -6,6 +6,8 @@ import { getApiConfig } from "../reduxStore/movieSlice";
 import Loading from "./Loading";
 import { Link, useParams } from "react-router-dom";
 import Images from "./Images";
+import SimilarMovies from "./SimilarMovies";
+import Cast from "./Cast";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -87,6 +89,17 @@ const MovieDetails = () => {
 
           <div className=" my-6">
             <Images />
+          </div>
+
+          <div className=" mt-6">
+            <Cast />
+          </div>
+
+          <div className=" mt-10">
+            <p className="text-white capitalize text-2xl ml-4 mt-4">
+              similar movies
+            </p>
+            <SimilarMovies />
           </div>
         </div>
       ) : (

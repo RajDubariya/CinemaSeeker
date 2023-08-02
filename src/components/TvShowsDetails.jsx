@@ -6,6 +6,8 @@ import { getTvShows } from "../reduxStore/tvShowsSlice";
 import Loading from "./Loading";
 import { Link, useParams } from "react-router-dom";
 import TvshowsImages from "./TvshowsImages";
+import SimilarTvShows from "./SimilarTvShows";
+import TvCast from "./TvCast";
 
 const TvShowsDetails = () => {
   const dispatch = useDispatch();
@@ -87,8 +89,19 @@ const TvShowsDetails = () => {
             </div>
           </div>
 
-          <div className=" my-12">
+          <div className=" my-6">
             <TvshowsImages />
+          </div>
+
+          <div className=" mt-6">
+            <TvCast />
+          </div>
+
+          <div className=" mt-10">
+            <p className="text-white capitalize text-2xl ml-4 mt-4">
+              similar tV shows
+            </p>
+            <SimilarTvShows />
           </div>
         </div>
       ) : (

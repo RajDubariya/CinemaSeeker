@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://api.themoviedb.org/3/";
 
-const TOKEN = "e" + process.env.REACT_APP_AUTHORIZATION_TOKEN;
+const TOKEN = process.env.REACT_APP_AUTHORIZATION_TOKEN;
 
 const fetchData = async (url, params) => {
   try {

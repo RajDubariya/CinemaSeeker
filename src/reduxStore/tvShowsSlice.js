@@ -5,6 +5,8 @@ export const tvShowsSlice = createSlice({
   initialState: {
     tvShowsData: [],
     tvShowsImages: [],
+    similarTvShows: [],
+    cast: [],
   },
   reducers: {
     getTvShows: (state, action) => {
@@ -13,10 +15,17 @@ export const tvShowsSlice = createSlice({
     getTvShowsImages: (state, action) => {
       state.tvShowsImages = action.payload;
     },
+    getSimilarTvShows: (state, action) => {
+      state.similarTvShows = action.payload;
+    },
+    getCast: (state, action) => {
+      state.cast = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { getTvShows, getTvShowsImages } = tvShowsSlice.actions;
+export const { getTvShows, getTvShowsImages, getSimilarTvShows, getCast } =
+  tvShowsSlice.actions;
 
 export default tvShowsSlice.reducer;

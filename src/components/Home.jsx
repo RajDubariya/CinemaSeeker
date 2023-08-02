@@ -16,7 +16,7 @@ const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    fetchData("trending/movie/week").then((res) => {
+    fetchData("movie/popular").then((res) => {
       dispatch(getApiConfig(res.results));
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

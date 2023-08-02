@@ -1,5 +1,5 @@
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect } from "react";
 import fetchData from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,15 +19,16 @@ const Images = () => {
 
   return (
     <>
-      <p className="text-white capitalize text-2xl ml-4 my-4">
-        Photos
-      </p>
+      <p className="text-white capitalize text-2xl ml-4 my-4">Photos</p>
 
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation,Autoplay]}
         navigation
         spaceBetween={50}
-        s
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           320: {
             slidesPerView: 2,
@@ -47,7 +48,7 @@ const Images = () => {
               <div className="flex justify-center items-cente shadow-lg shadow-gray-100/50">
                 <img
                   src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
-                  alt=""
+                  alt=" "
                   className=" w-full h-full hover:scale-105"
                 />
               </div>

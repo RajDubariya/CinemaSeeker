@@ -1,5 +1,5 @@
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect } from "react";
 import fetchData from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,10 +20,13 @@ const TvshowsImages = () => {
     <>
       <p className="text-white capitalize text-2xl ml-4 my-4">Photos</p>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         navigation
         spaceBetween={50}
-        s
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           320: {
             slidesPerView: 2,

@@ -10,7 +10,7 @@ import TvShowsDetails from "./components/TvShowsDetails";
 import Search from "./components/Search";
 import MoviesByGenres from "./components/MoviesByGenres";
 import TvShowsByGenres from "./components/TvShowsByGenres";
-import Images from "./components/Images";
+import Cast from "./components/Cast";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/search/:query" element={<Search />} />
         <Route path="/movieGenre/:genreId" element={<MoviesByGenres />} />
         <Route path="/tvGenre/:genreId" element={<TvShowsByGenres />} />
-        <Route path="/images" element={<Images />} />
+        <Route path="/cast" element={<Cast />} />
       </Routes>
     </>
   );
